@@ -11,3 +11,8 @@ npm create vite@latest  //frontend
 npm install
 
 npm run dev
+
+//Tailwind
+npm install -D tailwindcss postcss autoprefixer
+
+npx tailwindcss init -p
