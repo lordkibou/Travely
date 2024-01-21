@@ -8,6 +8,7 @@ export type UserType = {
     lastName: string;
 };
 
+//Schema is like the blueprint for a model
 const userSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
@@ -24,6 +25,7 @@ userSchema.pre("save", async function (next) {
     next();
 });
 
+//This is where we make the model based on the schema
 const User = mongoose.model<UserType>("User", userSchema);
 
 export default User;
