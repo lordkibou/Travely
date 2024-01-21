@@ -18,3 +18,7 @@ npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 
 npm install react-router-dom//frontend
+
+
+npm i bcryptjs jsonwebtoken
+npm i @types/bcryptjs @types/jsonwebtoken
