@@ -22,3 +22,5 @@ npm install react-router-dom//frontend
 
 npm i bcryptjs jsonwebtoken
 npm i @types/bcryptjs @types/jsonwebtoken
+
+npm i express-validator
