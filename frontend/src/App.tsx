@@ -9,6 +9,7 @@ import {
   Routes,
 } from "react-router-dom";
 import Layout from "./layouts/Layout";
+import Register from "./pages/Register";
 const App = () => {
   return (
     <BrowserRouter>
@@ -26,6 +27,14 @@ const App = () => {
           element={
             <Layout>
               <p>Search Page</p>
+            </Layout>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <Layout>
+              <Register />
             </Layout>
           }
         />
