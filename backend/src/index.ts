@@ -3,6 +3,7 @@ import cors from 'cors';
 import "dotenv/config";
 import mongoose from "mongoose";
 import usersRoutes from "./routes/users";
+import authRoutes from "./routes/auth";
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
@@ -12,6 +13,7 @@ app.use(cors());//This is for the frontend to be able to access the backend and 
 app.use(express.urlencoded({ extended: true })); //Parse url
 
 app.use("/api/users", usersRoutes);
+app.use("/api/auth", authRoutes);
 
 app.listen(7000, () => {
     console.log("Server running on port 7000")

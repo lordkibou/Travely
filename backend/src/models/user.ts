@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
 
 //Middleware from mongodb before saving the user, change password to hashed
 userSchema.pre("save", async function (next) {
-    if(this.isModified("password")) {
+    if (this.isModified("password")) {
         const hashed = await bcrypt.hash(this.get("password"), 8);
         this.set("password", hashed);
     }
