@@ -46,7 +46,7 @@ router.post(
 
       putJwtInResponse(res, user.id);
 
-      return res.sendStatus(200);
+      res.status(200).send({ message: "User registered OK" });
     } catch (error) {
       console.log(error);
       res.status(500).send({ message: "Something went wrong" });
