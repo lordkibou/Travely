@@ -26,3 +26,5 @@ npm i @types/bcryptjs @types/jsonwebtoken
 npm i express-validator//backend
 
 npm i react-hook-form//frontend
+
+npm i react-query//frontend
