@@ -3,6 +3,7 @@ import { useMutation } from "react-query";
 import * as apiClient from "../api-client.ts";
 import { useAppContext } from "../contexts/AppContext.tsx";
 import { RegisterFormData } from "../types/mainTypes.ts";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   {
@@ -12,6 +13,7 @@ const Register = () => {
     */
   }
 
+  const navigate = useNavigate();
   const { showToast} = useAppContext();
   const {
     register,
@@ -24,7 +26,8 @@ const Register = () => {
   //that does the fetch request to the backend
   const mutation = useMutation(apiClient.register, {
     onSuccess: () => {
-      showToast({message: "Account created successfully", type: "SUCCESS"})
+      showToast({ message: "Account created successfully", type: "SUCCESS" })
+      navigate("/");
     },
     onError: (error:Error) => {
       showToast({message: error.message, type: "ERROR"})
