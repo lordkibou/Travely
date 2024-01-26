@@ -1,14 +1,9 @@
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import * as apiClient from "../api-client.ts";
+import { useAppContext } from "../contexts/AppContext.tsx";
+import { RegisterFormData } from "../types/mainTypes.ts";
 
-export type RegisterFormData = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-};
 const Register = () => {
   {
     /*register is used for the required and dealing with the fields of the form
@@ -16,6 +11,8 @@ const Register = () => {
       handleSubmit is used to handle the submit of the form
     */
   }
+
+  const { showToast} = useAppContext();
   const {
     register,
     watch,
@@ -27,10 +24,10 @@ const Register = () => {
   //that does the fetch request to the backend
   const mutation = useMutation(apiClient.register, {
     onSuccess: () => {
-      console.log("User registered successfully");
+      showToast({message: "Account created successfully", type: "SUCCESS"})
     },
     onError: (error:Error) => {
-      console.log(error.message);
+      showToast({message: error.message, type: "ERROR"})
     }
   })
   
