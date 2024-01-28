@@ -18,6 +18,7 @@ export const AppContextProvider = ({
   const { isError } = useQuery("validateToken", apiClient.validateToken, {
     retry:false,
   })
+  
   return (
     <AppContext.Provider
       value={{

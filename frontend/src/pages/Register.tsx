@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useMutation } from "react-query";
+import { useMutation, useQueryClient} from "react-query";
 import * as apiClient from "../api-client.ts";
 import { useAppContext } from "../contexts/AppContext.tsx";
 import { RegisterFormData } from "../types/mainTypes.ts";
@@ -12,7 +12,7 @@ const Register = () => {
       handleSubmit is used to handle the submit of the form
     */
   }
-
+  const QueryClient = useQueryClient();
   const navigate = useNavigate();
   const { showToast} = useAppContext();
   const {
@@ -25,7 +25,8 @@ const Register = () => {
   //This happens when form is submitted, it calls the register function
   //that does the fetch request to the backend
   const mutation = useMutation(apiClient.register, {
-    onSuccess: () => {
+    onSuccess: async () => {
+      await QueryClient.invalidateQueries("validateToken");
       showToast({ message: "Account created successfully", type: "SUCCESS" })
       navigate("/");
     },
@@ -125,7 +126,7 @@ const Register = () => {
       <span>
         <button
           type="submit"
-          className="bg-blue-600 text-white font-bold p-2 rounded text-base hover:bg-blue-500"
+          className="bg-blue-600 text-white font-semibold p-2 rounded text-base hover:bg-blue-500"
         >
           Create an Account
         </button>

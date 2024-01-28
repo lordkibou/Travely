@@ -6,6 +6,11 @@ type RegisterFormData = {
   confirmPassword: string;
 };
 
+type SignInFormData = {
+  email: string;
+  password: string;
+};
+
 type ToastMessage = {
   message: string;
   type: "SUCCESS" | "ERROR";
@@ -22,4 +27,4 @@ type AppContext = {
   isLoggedIn: boolean;
 };
 
-export type { RegisterFormData, ToastMessage, AppContext, ToastProps };
+export type { RegisterFormData, ToastMessage, AppContext, ToastProps, SignInFormData};
