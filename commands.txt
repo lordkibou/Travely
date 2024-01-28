@@ -28,3 +28,7 @@ npm i express-validator//backend
 npm i react-hook-form//frontend
 
 npm i react-query//frontend
+
+ npm i cookie-parser//backend
+
+ npm i --save-dev @types/cookie-parser

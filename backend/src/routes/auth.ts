@@ -4,6 +4,8 @@ import { check, validationResult } from "express-validator";
 import User from "../models/user";
 import bcrypt from "bcryptjs";
 import putJwtInResponse from "../utils/putJwtInResponse";
+import verifyToken from "../middleware/auth";
+
 const router = express.Router();
 
 /*
@@ -52,4 +54,12 @@ router.post(
   }
 );
 
+router.get(
+  "/validate-token",
+  verifyToken,
+  async (req: Request, res: Response) => {
+    //We send the userId to the client
+    return res.status(200).json({ userId: req.userId });
+  }
+)
 export default router;
