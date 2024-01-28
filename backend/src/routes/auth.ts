@@ -61,5 +61,10 @@ router.get(
     //We send the userId to the client
     return res.status(200).json({ userId: req.userId });
   }
-)
+);
+
+
+router.post("/logout", (req: Request, res: Response) => {
+  res.cookie("auth_token", "", { httpOnly: true, expires: new Date(0) }).send();
+});
 export default router;
