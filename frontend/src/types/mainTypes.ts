@@ -19,6 +19,7 @@ type ToastProps = ToastMessage & {
 
 type AppContext = {
   showToast: (toastMessage: ToastMessage) => void;
+  isLoggedIn: boolean;
 };
 
 export type { RegisterFormData, ToastMessage, AppContext, ToastProps };

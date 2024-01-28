@@ -23,3 +23,18 @@ export const register = async (formData:RegisterFormData) => {
             throw new Error(message)
         }
 }
+
+export const validateToken = async () => { 
+    const response = await fetch(`${API_BASE_URL}/api/auth/validate-token`, {
+        method: 'GET',
+        credentials:"include",//Cookie
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    if (!response.ok) {
+        throw new Error("Token invalid")
+    }
+
+    return response.json()
+}
