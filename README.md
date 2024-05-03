@@ -1,5 +1,5 @@
 # Travely
 
-Tech Stack: Typescript, React, TailwindCSS, Express, MongoDB
+Tech Stack: Typescript, MongoDB, Express, React, Tailwind CSS
 
-Tech Tools: Vite, Thunder Client
+Tech Tools: Playwright, Vite, Thunder Client
