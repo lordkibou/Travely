@@ -36,3 +36,7 @@ npm i react-query//frontend
  npm i cross-env//backend
 
  npm init playwright@latest//e2e
+
+npm run build //backend and frontend to build the js code in /dist
+
+npm start //Start code in server, js code actually from the dist
