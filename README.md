@@ -1,6 +1,6 @@
 # Travely
 
-### Web app that allows users to book a stay , hotel when traveling
+### Web app that allows users to book their next stay (apartment, hotel or room)
 Tech Stack: Typescript, MongoDB, Express, React, Tailwind CSS
 
 Tech Tools: Playwright, Stripe, Vite, Thunder Client, Cloudinary
