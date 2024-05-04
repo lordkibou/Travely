@@ -13,7 +13,7 @@ const SignOutButton = () => {
       //Invalidate the query in order to refetch it
       //Because the user is no longer authenticated
       await QueryClient.invalidateQueries("validateToken");
-      showToast({ message: "Signed Out Successfully", type: "SUCCESS" });
+      showToast({ message: "Signed out successfully", type: "SUCCESS" });
       navigate("/");
     },
     onError: (error: Error) => {
