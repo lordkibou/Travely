@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import usersRoutes from "./routes/users";
 import authRoutes from "./routes/auth";
 import cookieParser from "cookie-parser";
+import path from "path";
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
@@ -16,6 +17,8 @@ app.use(cors({
     credentials: true
 }));//This is for the frontend to be able to access the backend and port compatibility
 app.use(express.urlencoded({ extended: true })); //Parse url
+
+app.use(express.static(path.join(__dirname, '../../frontend/dist')));//
 
 app.use("/api/users", usersRoutes);
 app.use("/api/auth", authRoutes);

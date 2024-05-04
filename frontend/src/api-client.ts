@@ -1,5 +1,5 @@
 import { RegisterFormData,SignInFormData } from "./types/mainTypes";
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || ''
 
 /*
  * formData:{email:string, password:string, confirmPassword:string, firstName:string, lastName:string}->
