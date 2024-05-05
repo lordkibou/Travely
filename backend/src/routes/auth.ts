@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 import { check, validationResult } from "express-validator";
 import User from "../models/user";
 import bcrypt from "bcryptjs";
-import putJwtInResponse from "../utils/putJwtInResponse";
+import {putJwtInResponse} from "../utils";
 import verifyToken from "../middleware/auth";
 
 const router = express.Router();
@@ -62,7 +62,6 @@ router.get(
     return res.status(200).json({ userId: req.userId });
   }
 );
-
 
 router.post("/logout", (req: Request, res: Response) => {
   res.cookie("auth_token", "", { httpOnly: true, expires: new Date(0) }).send();

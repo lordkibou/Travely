@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import User from "../models/user";
 const router = express.Router();
 import { check, validationResult } from "express-validator";
-import putJwtInResponse from "../utils/putJwtInResponse";
+import {putJwtInResponse} from "../utils";
 
 /*
  * POST,
