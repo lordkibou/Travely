@@ -40,3 +40,9 @@ npm i react-query//frontend
 npm run build //backend and frontend to build the js code in /dist
 
 npm start //Start code in server, js code actually from the dist
+
+npm i cloudinary
+
+npm i multer //Image handling in backend
+
+npm i --save-dev @types/multer
