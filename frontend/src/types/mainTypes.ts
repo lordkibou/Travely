@@ -27,4 +27,25 @@ type AppContext = {
   isLoggedIn: boolean;
 };
 
-export type { RegisterFormData, ToastMessage, AppContext, ToastProps, SignInFormData};
+type HotelFormData = {
+  name: string;
+  city: string;
+  country: string;
+  description: string;
+  type: string;
+  pricePerNight: number;
+  starRating: number;
+  facilities: string[];
+  imageFiles: FileList;
+  adultCount: number;
+  childCount: number;
+}
+
+export type {
+  RegisterFormData,
+  ToastMessage,
+  AppContext,
+  ToastProps,
+  SignInFormData,
+  HotelFormData
+};
