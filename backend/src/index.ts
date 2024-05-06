@@ -25,7 +25,7 @@ app.use(cors({
 }));//This is for the frontend to be able to access the backend and port compatibility
 app.use(express.urlencoded({ extended: true })); //Parse url
 
-app.use(express.static(path.join(__dirname, '../../frontend/dist')));//
+app.use(express.static(path.join(__dirname, '../../frontend/dist')));//Serves the frontend from the backend, so we don't have to run two servers in production
 
 app.use("/api/users", usersRoutes);
 app.use("/api/auth", authRoutes);
