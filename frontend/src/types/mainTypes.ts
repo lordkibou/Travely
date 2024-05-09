@@ -41,11 +41,17 @@ type HotelFormData = {
   childCount: number;
 }
 
+type PropsManageHotelForm = {
+  onSave: (hotelFormData: FormData) => void;
+  isLoading: boolean;
+}
+
 export type {
   RegisterFormData,
   ToastMessage,
   AppContext,
   ToastProps,
   SignInFormData,
-  HotelFormData
+  HotelFormData,
+  PropsManageHotelForm
 };
