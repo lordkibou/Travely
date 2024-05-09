@@ -1,5 +1,4 @@
-import { NextFunction } from "express-serve-static-core";
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import jwt, { JwtPayload } from "jsonwebtoken";
 
 declare global {
@@ -20,10 +19,8 @@ const verifyToken = (req:Request, res:Response, next:NextFunction) => {
     try {
         //Returns the payload inside of the token if the signature is valid
         const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY as string);
-
         //We take the userId from the payload and put it in the request
         req.userId = (decoded as JwtPayload).userId;
-        
         next();//Continue with 200 Code and userId in body
     }
     catch (error) {
