@@ -12,7 +12,6 @@ import AddHotel from "./pages/AddHotel";
 
 const App = () => {
   const { isLoggedIn } = useAppContext();
-  console.log(isLoggedIn)
   return (
     <BrowserRouter>
       <Routes>
